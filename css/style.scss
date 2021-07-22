@@ -1,2 +1,92 @@
 @charset "UTF-8";
+/* 変数 */
 
+$cYellow : rgb(238, 238, 81);
+/* 初期設定 */
+
+html {
+  font-size: 100%;
+  background-color: black;
+  color: white;
+}
+body {
+  font-family: "Helvetica Neue", "Arial", "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+
+/* すべて適用 */
+
+nav {
+  text-align: center;
+}
+.titles {
+    position: absolute;
+    top:71%;
+    left:38.5%;
+  .site-title {
+    font-size: 5rem;
+    display: inline-block;
+    height: 108px;
+    color: whitesmoke;
+    border-bottom: solid 7px $cYellow ;
+    margin-bottom: 8.5px;
+    letter-spacing: 3px;
+  }
+}
+.sub-title {
+  color: rgba(255, 255, 255, 0.671);
+  text-align: center;
+  font-size: 1.3rem;
+}
+.title-wrapper {
+  text-align: center;
+}
+.sec-title {
+  font-size: 2.2rem;
+  display: inline-block;
+
+  height: 60px;
+  border-bottom: solid 6px $cYellow ;
+  margin-bottom: 10px;
+}
+.wrapper {
+  max-width: 1000px;
+  padding: 90px 5px 150px 5px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ヘッダー部分 */
+#header {
+  min-height: 100vh;
+  background-image: url(../img/dark-cube.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 20px 40px;
+  position: relative;
+  nav {
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      
+      li {
+          font-size: 1.2rem;
+        margin-right: 30px;
+        a{
+            color: whitesmoke;
+        }
+      }
+    }
+  }
+}
