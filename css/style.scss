@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* 変数 */
 
-$cYellow : rgb(238, 238, 81);
+$cYellow: rgb(230, 230, 11);
 /* 初期設定 */
 
 html {
@@ -16,7 +16,7 @@ body {
   line-height: 1.7;
 }
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 img {
   max-width: 100%;
@@ -31,17 +31,20 @@ nav {
   text-align: center;
 }
 .titles {
-    position: absolute;
-    top:71%;
-    left:38.5%;
+  position: absolute;
+  top: 71%;
+  left: 0;
+  right: 0;
+  bottom: 0;
   .site-title {
-    font-size: 5rem;
+    font-size: 4.5rem;
     display: inline-block;
-    height: 108px;
+    height: 85px;
     color: whitesmoke;
-    border-bottom: solid 7px $cYellow ;
+    border-bottom: solid 7px $cYellow;
     margin-bottom: 8.5px;
     letter-spacing: 3px;
+    filter: drop-shadow(1px 1px 9px #cccbcb73);
   }
 }
 .sub-title {
@@ -53,18 +56,18 @@ nav {
   text-align: center;
 }
 .sec-title {
-  font-size: 2.2rem;
+  font-size: 3rem;
   display: inline-block;
 
-  height: 60px;
-  border-bottom: solid 6px $cYellow ;
-  margin-bottom: 10px;
+  height: 70px;
+  border-bottom: solid 6px $cYellow;
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
 .wrapper {
-  max-width: 1000px;
-  padding: 90px 5px 150px 5px;
+  max-width: 1300px;
+  padding: 50px 45px 50px 45px;
   margin: 0 auto;
-  text-align: center;
 }
 
 /* ヘッダー部分 */
@@ -79,14 +82,141 @@ nav {
     ul {
       display: flex;
       justify-content: flex-end;
-      
+
       li {
-          font-size: 1.2rem;
+        font-size: 1.2rem;
         margin-right: 30px;
-        a{
-            color: whitesmoke;
+        a {
+          color: whitesmoke;
         }
       }
     }
   }
+}
+/* プロフィール部分 */
+#profile {
+  color: black;
+  background-color: white;
+  padding-bottom: 80px;
+  .profile-content {
+    display: flex;
+    flex-direction: row;
+    .profile-img {
+      margin-right: 70px;
+      width: 50%;
+      border-radius: 5px;
+      box-shadow: 5px 2px 5px black;
+      overflow: hidden;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .profile-detail {
+      width: 50%;
+      word-break: break-all;
+      padding: 60px 0 0 0;
+      h3 {
+        display: inline-block;
+        font-size: 1.7rem;
+      }
+      p {
+        margin-top: 10px;
+        font-size: 1rem;
+        display: inline-block;
+      }
+    }
+  }
+}
+#skill {
+  background-color: black;
+  color: white;
+  .skill-content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    word-break: break-all;
+    padding-top: 20px;
+    img {
+      width: 100%;
+      height: 100%;
+      background: $cYellow;
+    }
+    h3 {
+      margin-top: 20px;
+      font-size: 1.6rem;
+    }
+    p {
+      margin: 20px 0 30px 0;
+      font-size: 1.2rem;
+    }
+    .img-cl {
+      overflow: hidden;
+      background-color: $cYellow;
+      border-radius: 50%;
+      border: solid 2.5px white;
+      width: 91.5px;
+      height: 25%;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .skill-wrap {
+      padding: 10px 10px 10px;
+      margin-right: 40px;
+
+      &:nth-child(3) {
+        margin-right: 0;
+      }
+    }
+    .skill-html {
+      width: 27%;
+    }
+    .skill-php {
+      width: 27%;
+    }
+    .skill-adobe {
+      width: 27%;
+    }
+  }
+}
+/* ワーク部分 */
+
+#work {
+  background-color: white;
+  color: black;
+  .card-body {
+    .card-text {
+      display: inline-block;
+      height: 130px;
+    }
+    .arrow-btn {
+      text-align: right;
+
+      font-size: 1.4rem;
+
+      .fas {
+        cursor: pointer;
+        transition: transform 0.5s;
+      }
+      .fas-rotate {
+        transform: rotate(-180deg);
+      }
+    }
+    .open-text {
+      margin-top: 10px;
+    }
+    .card-none {
+      display: none;
+      height: 80px;
+    }
+  }
+}
+/* フッター */
+#footer {
+  background-color: white;
+  color: black;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 0;
+  text-align: center;
 }
