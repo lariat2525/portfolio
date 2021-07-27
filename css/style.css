@@ -180,6 +180,8 @@ nav {
   word-break: break-all;
   padding-top: 20px;
   padding-bottom: 80px;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 #skill .skill-content img {
@@ -189,12 +191,12 @@ nav {
 }
 
 #skill .skill-content h3 {
-  margin-top: 20px;
+  margin-top: 45px;
   font-size: 1.6rem;
 }
 
 #skill .skill-content p {
-  margin: 20px 0 30px 0;
+  margin: 30px 0 30px 0;
   font-size: 1.2rem;
 }
 
@@ -323,20 +325,17 @@ nav {
     font-size: 1.1rem;
     margin-right: 20px;
   }
-}
-
-#skill .skill-content h3 {
-  font-size: 1.3rem;
-}
-
-#skill .skill-content p {
-  font-size: 0.9rem;
-}
-
-#skill .skill-content .img-cl {
-  border: solid 2px #fafafa;
-  width: 85.5px;
-  height: 20.5%;
+  #skill .skill-content h3 {
+    font-size: 1.3rem;
+  }
+  #skill .skill-content p {
+    font-size: 0.9rem;
+  }
+  #skill .skill-content .img-cl {
+    border: solid 2px #fafafa;
+    width: 85.5px;
+    height: 20.5%;
+  }
 }
 
 /* 小 */
@@ -394,7 +393,6 @@ nav {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 20px;
   }
   #skill .skill-content .sp-width {
     width: 100%;
