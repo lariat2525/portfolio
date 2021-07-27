@@ -23,4 +23,16 @@ $(function () {
     indexTool(".fas",indexBtn);
 
   });
+
+  $('a[href^="#"]').click(function(){
+
+    let href= $(this).attr("href");
+
+    let hreftg = $(href == "#" || href == "" ? 'html' : href);
+
+    let position = hreftg.offset().top;
+
+    $("html, body").animate({scrollTop:position}, 200, "swing");
+    return false;
+  });
 });

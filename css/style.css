@@ -1,14 +1,22 @@
 @charset "UTF-8";
-/* 変数 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap");
+/*////////////////////////////
+  変数
+/*/
+/* 色 */
+/* フォント */
 /* 初期設定 */
+/*////////////////////////////
+  PC
+/*/
+/* 全体要素 */
 html {
   font-size: 100%;
-  background-color: black;
-  color: white;
+  background-color: #121013;
+  color: #fafafa;
 }
 
 body {
-  font-family: "Helvetica Neue", "Arial", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
   font-size: 0.9rem;
   line-height: 1.7;
 }
@@ -25,7 +33,7 @@ li {
   list-style: none;
 }
 
-/* すべて適用 */
+/* 全体セレクタ */
 nav {
   text-align: center;
 }
@@ -42,8 +50,8 @@ nav {
   font-size: 4.5rem;
   display: inline-block;
   height: 85px;
-  color: whitesmoke;
-  border-bottom: solid 7px #e6e60b;
+  color: #fafafa;
+  border-bottom: solid 7px #f1c925;
   margin-bottom: 8.5px;
   letter-spacing: 3px;
   -webkit-filter: drop-shadow(1px 1px 9px #cccbcb73);
@@ -53,7 +61,8 @@ nav {
 .sub-title {
   color: rgba(255, 255, 255, 0.671);
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 .title-wrapper {
@@ -63,8 +72,8 @@ nav {
 .sec-title {
   font-size: 3rem;
   display: inline-block;
-  height: 70px;
-  border-bottom: solid 6px #e6e60b;
+  height: 60px;
+  border-bottom: solid 6px #f1c925;
   margin-top: 60px;
   margin-bottom: 30px;
 }
@@ -99,14 +108,18 @@ nav {
   margin-right: 30px;
 }
 
+#header nav ul li:nth-child(4) {
+  margin-right: 0;
+}
+
 #header nav ul li a {
-  color: whitesmoke;
+  color: #fafafa;
 }
 
 /* プロフィール部分 */
 #profile {
   color: black;
-  background-color: white;
+  background-color: #fafafa;
   padding-bottom: 80px;
 }
 
@@ -124,8 +137,8 @@ nav {
   margin-right: 70px;
   width: 50%;
   border-radius: 5px;
-  -webkit-box-shadow: 5px 2px 5px black;
-          box-shadow: 5px 2px 5px black;
+  -webkit-box-shadow: 5px 5px 7px black;
+          box-shadow: 5px 5px 7px black;
   overflow: hidden;
 }
 
@@ -152,8 +165,8 @@ nav {
 }
 
 #skill {
-  background-color: black;
-  color: white;
+  background-color: #121013;
+  color: #fafafa;
 }
 
 #skill .skill-content {
@@ -166,12 +179,13 @@ nav {
   text-align: center;
   word-break: break-all;
   padding-top: 20px;
+  padding-bottom: 80px;
 }
 
 #skill .skill-content img {
   width: 100%;
   height: 100%;
-  background: #e6e60b;
+  background: #f1c925;
 }
 
 #skill .skill-content h3 {
@@ -186,9 +200,9 @@ nav {
 
 #skill .skill-content .img-cl {
   overflow: hidden;
-  background-color: #e6e60b;
+  background-color: #f1c925;
   border-radius: 50%;
-  border: solid 2.5px white;
+  border: solid 2.5px #fafafa;
   width: 91.5px;
   height: 25%;
   text-align: center;
@@ -218,8 +232,21 @@ nav {
 
 /* ワーク部分 */
 #work {
-  background-color: white;
-  color: black;
+  background-color: #fafafa;
+  color: #121013;
+}
+
+#work .col {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  cursor: pointer;
+}
+
+#work .col:hover {
+  -webkit-transform: scale(1.01) translate(-0.2%, -0.2%);
+          transform: scale(1.01) translate(-0.2%, -0.2%);
 }
 
 #work .card-body .card-text {
@@ -256,11 +283,133 @@ nav {
 
 /* フッター */
 #footer {
-  background-color: white;
-  color: black;
+  background-color: #fafafa;
+  color: #121013;
   font-size: 0.9rem;
   font-weight: 600;
   padding: 10px 0;
   text-align: center;
+}
+
+/*////////////////////////////
+  SP
+/*/
+/* 中 */
+@media screen and (max-width: 860px) {
+  .titles {
+    top: 75%;
+  }
+  .titles .site-title {
+    font-size: 4rem;
+    height: 75px;
+    color: #fafafa;
+    border-bottom: solid 5.5px #f1c925;
+    margin-bottom: 6px;
+    letter-spacing: 2px;
+  }
+  .titles .sub-title {
+    color: rgba(255, 255, 255, 0.671);
+    text-align: center;
+    font-size: 1.15rem;
+    font-family: "Noto Sans JP", sans-serif;
+  }
+  .sec-title {
+    font-size: 2.7rem;
+    height: 52px;
+    border-bottom: solid 5px #f1c925;
+    margin-bottom: 35px;
+  }
+  #header nav ul li {
+    font-size: 1.1rem;
+    margin-right: 20px;
+  }
+}
+
+#skill .skill-content h3 {
+  font-size: 1.3rem;
+}
+
+#skill .skill-content p {
+  font-size: 0.9rem;
+}
+
+#skill .skill-content .img-cl {
+  border: solid 2px #fafafa;
+  width: 85.5px;
+  height: 20.5%;
+}
+
+/* 小 */
+@media screen and (max-width: 550px) {
+  .titles {
+    top: 78%;
+  }
+  .titles .site-title {
+    font-size: 3.4rem;
+    height: 65px;
+    border-bottom: solid 4.5px #f1c925;
+    margin-bottom: 6px;
+    letter-spacing: 2px;
+  }
+  .titles .sub-title {
+    color: rgba(255, 255, 255, 0.671);
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: "Noto Sans JP", sans-serif;
+  }
+  .sec-title {
+    font-size: 2.35rem;
+    height: 46px;
+    border-bottom: solid 4px #f1c925;
+    margin-bottom: 35px;
+  }
+  #header nav ul li {
+    font-size: 0.9rem;
+    margin-right: 20px;
+  }
+  #profile {
+    padding-bottom: 50px;
+  }
+  #profile .profile-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #profile .profile-content .profile-img {
+    width: 100%;
+  }
+  #profile .profile-content .profile-detail {
+    width: 100%;
+    text-align: center;
+  }
+  #profile .profile-content .profile-detail h3 {
+    font-size: 1.5rem;
+  }
+  #profile .profile-content .profile-detail p {
+    font-size: 0.9rem;
+  }
+  #skill .skill-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 20px;
+  }
+  #skill .skill-content .sp-width {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  #skill .skill-content h3 {
+    font-size: 1.3rem;
+  }
+  #skill .skill-content p {
+    font-size: 0.9rem;
+  }
+  #skill .skill-content .img-cl {
+    border: solid 2px #fafafa;
+    width: 85.5px;
+    height: 20.5%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

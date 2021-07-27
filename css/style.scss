@@ -1,17 +1,30 @@
 @charset "UTF-8";
-/* 変数 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap");
 
-$cYellow: rgb(230, 230, 11);
+/*////////////////////////////
+  変数
+/*/ ///////////////////////////
+
+/* 色 */
+$cYellow: #f1c925;
+$cBlack: #121013;
+$cPink: #841818;
+$cWhite: #fafafa;
+/* フォント */
+$fOpen: "Noto Sans JP", sans-serif;
 /* 初期設定 */
 
+/*////////////////////////////
+  PC
+/*/ ///////////////////////////
+
+/* 全体要素 */
 html {
   font-size: 100%;
-  background-color: black;
-  color: white;
+  background-color: $cBlack;
+  color: $cWhite;
 }
 body {
-  font-family: "Helvetica Neue", "Arial", "Hiragino Sans",
-    "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
   font-size: 0.9rem;
   line-height: 1.7;
 }
@@ -25,7 +38,7 @@ li {
   list-style: none;
 }
 
-/* すべて適用 */
+/* 全体セレクタ */
 
 nav {
   text-align: center;
@@ -40,7 +53,7 @@ nav {
     font-size: 4.5rem;
     display: inline-block;
     height: 85px;
-    color: whitesmoke;
+    color: $cWhite;
     border-bottom: solid 7px $cYellow;
     margin-bottom: 8.5px;
     letter-spacing: 3px;
@@ -50,7 +63,8 @@ nav {
 .sub-title {
   color: rgba(255, 255, 255, 0.671);
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
+  font-family: $fOpen;
 }
 .title-wrapper {
   text-align: center;
@@ -59,7 +73,7 @@ nav {
   font-size: 3rem;
   display: inline-block;
 
-  height: 70px;
+  height: 60px;
   border-bottom: solid 6px $cYellow;
   margin-top: 60px;
   margin-bottom: 30px;
@@ -86,8 +100,11 @@ nav {
       li {
         font-size: 1.2rem;
         margin-right: 30px;
+        &:nth-child(4) {
+          margin-right: 0;
+        }
         a {
-          color: whitesmoke;
+          color: $cWhite;
         }
       }
     }
@@ -96,7 +113,7 @@ nav {
 /* プロフィール部分 */
 #profile {
   color: black;
-  background-color: white;
+  background-color: $cWhite;
   padding-bottom: 80px;
   .profile-content {
     display: flex;
@@ -105,7 +122,7 @@ nav {
       margin-right: 70px;
       width: 50%;
       border-radius: 5px;
-      box-shadow: 5px 2px 5px black;
+      box-shadow: 5px 5px 7px black;
       overflow: hidden;
       img {
         height: 100%;
@@ -129,14 +146,15 @@ nav {
   }
 }
 #skill {
-  background-color: black;
-  color: white;
+  background-color: $cBlack;
+  color: $cWhite;
   .skill-content {
     display: flex;
     justify-content: center;
     text-align: center;
     word-break: break-all;
     padding-top: 20px;
+    padding-bottom: 80px;
     img {
       width: 100%;
       height: 100%;
@@ -154,7 +172,7 @@ nav {
       overflow: hidden;
       background-color: $cYellow;
       border-radius: 50%;
-      border: solid 2.5px white;
+      border: solid 2.5px $cWhite;
       width: 91.5px;
       height: 25%;
       text-align: center;
@@ -182,8 +200,15 @@ nav {
 /* ワーク部分 */
 
 #work {
-  background-color: white;
-  color: black;
+  background-color: $cWhite;
+  color: $cBlack;
+  .col {
+    transition: transform 0.5s;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.01) translate(-0.2%, -0.2%);
+    }
+  }
   .card-body {
     .card-text {
       display: inline-block;
@@ -213,10 +238,146 @@ nav {
 }
 /* フッター */
 #footer {
-  background-color: white;
-  color: black;
+  background-color: $cWhite;
+  color: $cBlack;
   font-size: 0.9rem;
   font-weight: 600;
   padding: 10px 0;
   text-align: center;
+}
+
+/*////////////////////////////
+  SP
+/*/ ///////////////////////////
+
+/* 中 */
+
+@media screen and (max-width: 860px) {
+  .titles {
+    top: 75%;
+    .site-title {
+      font-size: 4rem;
+      height: 75px;
+      color: $cWhite;
+      border-bottom: solid 5.5px $cYellow;
+      margin-bottom: 6px;
+      letter-spacing: 2px;
+    }
+    .sub-title {
+      color: rgba(255, 255, 255, 0.671);
+      text-align: center;
+      font-size: 1.15rem;
+      font-family: $fOpen;
+    }
+  }
+  .sec-title {
+    font-size: 2.7rem;
+    height: 52px;
+    border-bottom: solid 5px $cYellow;
+    margin-bottom: 35px;
+  }
+
+  #header {
+    nav {
+      ul {
+        li {
+          font-size: 1.1rem;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+#skill {
+  .skill-content {
+    h3 {
+      font-size: 1.3rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    .img-cl {
+      border: solid 2px $cWhite;
+      width: 85.5px;
+      height: 20.5%;
+    }
+  }
+}
+
+/* 小 */
+
+@media screen and (max-width: 550px) {
+  .titles {
+    top: 78%;
+    .site-title {
+      font-size: 3.4rem;
+      height: 65px;
+      border-bottom: solid 4.5px $cYellow;
+      margin-bottom: 6px;
+      letter-spacing: 2px;
+    }
+    .sub-title {
+      color: rgba(255, 255, 255, 0.671);
+      text-align: center;
+      font-size: 0.9rem;
+      font-family: $fOpen;
+    }
+  }
+  .sec-title {
+    font-size: 2.35rem;
+    height: 46px;
+    border-bottom: solid 4px $cYellow;
+    margin-bottom: 35px;
+  }
+
+  #header {
+    nav {
+      ul {
+        li {
+          font-size: 0.9rem;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  #profile {
+    padding-bottom: 50px;
+    .profile-content {
+      flex-direction: column;
+      .profile-img {
+        width: 100%;
+      }
+      .profile-detail {
+        width: 100%;
+        text-align: center;
+        h3 {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  #skill {
+    .skill-content {
+      flex-direction: column;
+      margin-top:20px;
+      .sp-width{
+        width: 100%;
+        margin-bottom:30px;
+      }
+      h3 {
+        font-size: 1.3rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+      .img-cl {
+        border: solid 2px $cWhite;
+        width: 85.5px;
+        height: 20.5%;
+      }
+    }
+  }
 }
