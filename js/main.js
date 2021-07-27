@@ -1,32 +1,43 @@
 $(function () {
-
   $(".fas").on("click", function () {
     var indexBtn = $(".fas").index(this);
     var target = $(".card-body .open-text");
     var targetBtn = target.eq(indexBtn);
     targetBtn.slideToggle(450);
 
-    function indexTool(name,e){
-        if ($(name).eq(e).hasClass("fas-rotate")) {
-            $(name).eq(e).removeClass("fas-rotate");
-        } else {
-          $(name).eq(e).addClass("fas-rotate");
-        }
+    function indexTool(name, e) {
+      if ($(name).eq(e).hasClass("fas-rotate")) {
+        $(name).eq(e).removeClass("fas-rotate");
+      } else {
+        $(name).eq(e).addClass("fas-rotate");
+      }
     }
 
-    indexTool(".fas",indexBtn);
-
+    indexTool(".fas", indexBtn);
   });
 
-  $('a[href^="#"]').click(function(){
+  $(".toggle_btn").on("click", function () {
+    if ($("#navi").hasClass("open")) {
+      $("#navi").removeClass("open");
+    } else {
+      $("#navi").addClass("open");
+    }
 
-    let href= $(this).attr("href");
+    $("#mask").on("click", function () {
+      // openクラスを削除して、メニューを閉じる
+      $("#navi").removeClass("open");
+    });
+  });
 
-    let hreftg = $(href == "#" || href == "" ? 'html' : href);
+  $('a[href^="#"]').click(function () {
+    let href = $(this).attr("href");
+
+    let hreftg = $(href == "#" || href == "" ? "html" : href);
 
     let position = hreftg.offset().top;
 
-    $("html, body").animate({scrollTop:position}, 200, "swing");
-    return false;
+    $("html, body").animate({ scrollTop: position }, 200, "swing");
+
+    $("#navi").removeClass("open"); /* ハンバーメニューでスクロールした際のマスクが残ってしまう問題をここで解決 */
   });
 });
